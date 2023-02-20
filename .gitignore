@@ -1,0 +1,6 @@
+*/__pycache__/*
+*.pyc
+.obj*
+debian/.debhelper/*
+debian/ros-noetic*
+debian/files
