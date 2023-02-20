@@ -5789,20 +5789,6 @@
       <field type="float" name="throttle_out" units="%">Output throttle</field>
       <field type="float" name="pt_compensation">Pressure/temperature compensation</field>
     </message>
-    <message id="229" name="HOVER_THRUST_ESTIMATE">
-      <wip/>
-      <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
-      <description>Hover thrust estimate during flight.</description>
-      <field type="uint64_t" name="timestamp" units="us">Time since system start.</field>
-      <field type="uint64_t" name="timestamp_sample">Time of corresponding sensor data last used for this estimate.</field>
-      <field type="float" name="hover_thrust">Estimted hover thrust [0.1 0.9].</field>
-      <field type="float" name="hover_thrust_var">Estimated hover thrust variance.</field>
-      <field type="float" name="accel_innov">Innovation of the last acceleration.</field>
-      <field type="float" name="accel_innov_var">Innovation variance of the last acceleration fusion.</field>
-      <field type="float" name="accel_innov_test_ratio">Normalized innovation squared test ratio.</field>
-      <field type="float" name="accel_noise_var">Vertical accleration noise variance form innovation residual.</field>
-      <field type="uint8_t" name="valid" invalid="0">Boolean indicating whether the hover thrust estimate is valid or not (valid: 1, invalid: 0). Default is 0 (invalid).</field>
-    </message>
     <!-- MESSAGE IDs 180 - 229: Space for custom messages in individual projectname_messages.xml files -->
     <message id="230" name="ESTIMATOR_STATUS">
       <description>Estimator status message including flags, innovation test ratios and estimated accuracies. The flags message is an integer bitmask containing information on which EKF outputs are valid. See the ESTIMATOR_STATUS_FLAGS enum definition for further information. The innovation test ratios show the magnitude of the sensor innovation divided by the innovation check threshold. Under normal operation the innovation test ratios should be below 0.5 with occasional values up to 1.0. Values greater than 1.0 should be rare under normal operation and indicate that a measurement has been rejected by the filter. The user should be notified if an innovation test ratio greater than 1.0 is recorded. Notifications for values in the range between 0.5 and 1.0 should be optional and controllable by the user.</description>
